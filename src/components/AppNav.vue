@@ -7,7 +7,7 @@ export default {
 <template>
     <div class="my_nav">
         <div class="my_img_box">
-            <img class="img_fluid" src="../../public/img/yu-gi-oh.png" alt="">
+            <img class="img_fluid img_obj" src="../../public/img/yu-gi-oh.png" alt="">
         </div>
         <h1>Yu-Gi-Oh Api</h1>
     </div>
@@ -27,6 +27,11 @@ export default {
         .my_img_box {
             width: 60px;
             height: 30px;
+
+            .img_obj{
+                height: 100%;
+                object-fit: cover;
+            }
         }
     }
 </style>

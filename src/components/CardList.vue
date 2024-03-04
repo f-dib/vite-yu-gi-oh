@@ -16,8 +16,10 @@ export default {
         <div v-for="currentCard in store.card" class="flex-column card_style">
             <div>
                 <img class="img_fluid" :src="currentCard.card_images[0].image_url" alt="">
-                <h3>{{ currentCard.name }}</h3>
-                <span>{{ currentCard.archetype }}</span>
+                <div class="flex-column card_description">
+                    <h3>{{ currentCard.name }}</h3>
+                    <span>{{ currentCard.archetype }}</span>
+                </div>
             </div>
         </div>
     </div>
@@ -30,13 +32,19 @@ export default {
         text-align: center;
         background-color: #d48f38;
 
-        img{
-            margin-bottom: 15px;
+        .card_description{
+
+            padding: 10px;
+
+            img{
+                margin-bottom: 15px;
+            }
+    
+            h3{
+                color: white;
+                margin-bottom: 20px;
+            }
         }
 
-        h3{
-            color: white;
-            margin-bottom: 20px;
-        }
     }
 </style>
