@@ -1,16 +1,19 @@
 <script>
+import { store } from '../store.js';
 export default {
     name: 'CardList',
 
-    props: {
-        card: Array,
+    data(){
+        return {
+            store
+        }
     }
 }
 </script>
 
 <template>
     <ul>
-        <li v-for="currentCard in card">
+        <li v-for="currentCard in store.card">
         {{ currentCard.name }}
         </li>
     </ul>
