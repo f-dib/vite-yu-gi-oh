@@ -3,7 +3,7 @@ import axios from 'axios';
 import {store} from './store.js';
 
 import AppNav from './components/AppNav.vue';
-import CardList from './components/CardList.vue';
+import CardContainer from './components/CardContainer.vue';
 
 export default {
   data(){
@@ -14,20 +14,20 @@ export default {
     }
   },
   created(){
-    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0').then(res => {
+    axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0').then(res => {
       this.store.card = res.data.data
     })
   },
   components: {
     AppNav,
-    CardList
+    CardContainer
   }
 }
 </script>
 
 <template>
   <AppNav></AppNav>
-  <CardList></CardList>
+  <CardContainer></CardContainer>
 </template>
 
 <style lang="scss">
