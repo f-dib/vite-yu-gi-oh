@@ -3,7 +3,7 @@ import {reactive} from 'vue'
 export const store = reactive ({
     
     card: [],
-    searchArchetype: '',
+    searchArchetype: 0,
     allArchetype: []
 
 });

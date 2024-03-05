@@ -32,9 +32,17 @@ export default {
 
       searchType(){
 
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.searchArchetype).then(res => {
-          this.store.card = res.data
+        if (this.store.searchArchetype == '0'){
+          axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0').then(res => {
+            this.store.card = res.data
         })
+        } else {
+          
+          axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.searchArchetype).then(res => {
+            this.store.card = res.data
+          })
+
+        }
 
       }
       
@@ -53,7 +61,7 @@ export default {
       Loading...
     </div>
     <div v-else>
-      <ArchetypeSearch class="form" @change="searchType()"></ArchetypeSearch>
+      <ArchetypeSearch class="form" @onchange="searchType()"></ArchetypeSearch>
       <CardContainer></CardContainer>
     </div>
 </template>
