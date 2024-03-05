@@ -13,7 +13,7 @@ export default {
 
 <template>
     <div class="d-flex">
-        <div v-for="currentCard in store.card" class="flex-column card_style">
+        <div v-for="currentCard in store.card.data" class="flex-column card_style">
             <div>
                 <img class="img_fluid" :src="currentCard.card_images[0].image_url" alt="">
                 <div class="flex-column card_description">
