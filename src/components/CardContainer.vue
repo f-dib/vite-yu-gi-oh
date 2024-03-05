@@ -1,7 +1,6 @@
 <script>
 import { store } from '../store.js';
 import CardList from './CardList.vue';
-import ArchetypeSearch from './ArchetypeSearch.vue'
 
 export default {
     name: 'CardContainer',
@@ -13,14 +12,12 @@ export default {
     },
     components: {
         CardList,
-        ArchetypeSearch
     }
 }
 </script>
 
 <template>
     <div class="container1">
-        <ArchetypeSearch class="form"></ArchetypeSearch>
         <div class="container2">
             <div class="card_found">Found {{ store.card.data.length }} Cards</div>
             <CardList></CardList>
@@ -30,15 +27,7 @@ export default {
 
 <style lang="scss">
     .container1{
-        position: relative;
         padding: 60px 70px;
-
-        .form{
-            position: absolute;
-            left: 70px;
-            top: 30px;
-            transform: translateY(-50%);
-        }
 
         .container2{
             padding: 30px;
