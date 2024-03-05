@@ -28,7 +28,7 @@ export default {
 
       searchType(){
 
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes').then(res => {
+        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.searchArchetype).then(res => {
           console.log(res.data.data)
           this.store.card = res.data
         })
