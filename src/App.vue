@@ -19,7 +19,11 @@ export default {
     created(){
       axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0').then(res => {
         this.store.card = res.data,
-        this.isLoading = false
+        this.isLoading = false,
+
+        axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php').then(res2 => {
+        this.store.allArchetype = res2.data
+        })
       }).catch(err => {
         console.log(err)
       })
@@ -29,7 +33,6 @@ export default {
       searchType(){
 
         axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.searchArchetype).then(res => {
-          console.log(res.data.data)
           this.store.card = res.data
         })
 
